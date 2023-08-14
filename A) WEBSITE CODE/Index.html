@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       *{
+        margin: 0;
+        padding: 0;
+        font-family:sans-serif ;
+       } 
+
+       .banner {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background-image:url("coffeebackground.jpg");
+        background-size:cover;
+        background-position: center;
+    
+       }
+
+       .banner::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+
+       }
+
+       .navbar {
+        width: 100%;
+        height:30px ;
+        display: flex;
+        align-items: center;
+        padding: 35px 0;
+        align-items: center;
+        background:rgba(0, 0, 0, 0.6);
+
+       }
+
+       .logo {
+        padding: 10px;
+        width: 180px; 
+        margin-right: 220px; 
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+
+       }
+
+       .Cart {
+        padding: 0px;
+        width: 10%;
+        height: auto;           
+        margin-left: 300px; 
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+
+       }
+
+       .navbar ul {
+        list-style: none;
+        display: flex;
+        text-align: center;
+        
+       }
+
+       .navbar ul li {
+        list-style: none;
+        margin: 0 40px;
+        position: relative;
+        text-align: center;
+        
+       }
+
+       .navbar ul li a {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+
+       }
+
+       .navbar ul li ::after {
+        content: "";
+        height: 3px;
+        width: 0;
+        background: white;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.2s;
+
+       }
+
+       .navbar ul li :hover::after {
+        width: 100%;
+
+       }
+
+       
+       .content{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align:center ;
+        color: white;
+
+       }
+       .content h1{
+        font-size: 70px;
+        margin-top: 80px;
+
+       }
+
+       .content p{
+        margin: 20px auto;
+        font-weight: 100;
+        line-height: 25px;
+
+       }
+
+       button{
+        width: 200px;
+        padding: 15px 0;
+        text-align: center;
+        margin: 20px 10px;
+        border-radius: 25px;
+        font-weight: bold;
+        border: solid black;
+        background: transparent;
+        color:white;
+        cursor: pointer;
+        position: relative;
+        overflow:hidden
+    
+       }
+
+      span{
+        background: black;
+        height: 100%;
+        width: 0%;
+        border-radius: 25px;
+        position: absolute ;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: 1.0s;
+
+      }
+      button:hover span{
+        width: 100%;
+      }
+      button:hover {
+        border: none;
+      }
+    
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="logo.webp" class="logo">
+            <ul>
+                <li><a href="file:///C:/Users/erwin/OneDrive/Documents/FINAL%20PROJECT%20CODE/A)%20WEBSITE%20CODE/Index.html">Home</a></li>
+                <li><a href="file:///C:/Users/erwin/OneDrive/Documents/FINAL%20PROJECT%20CODE/coffee%20page%20code/coffeepage.html">Coffee</a> 
+                <li><a href="file:///C:/Users/erwin/OneDrive/Documents/FINAL%20PROJECT%20CODE/Signup%20page/signup.html">Sign Up</a></li>
+                
+                
+            </ul>
+
+             <a href="https://www.republicaroasters.com/product-category/online-shop/"><img src="Shopping Cart.png" class="Cart"></a>
+        </div>
+
+        <div class="content">
+            <h1>COFFEE LIKE NO OTHER</h1>
+            <P>Explore the world of coffee that Republica has to offer. </P>
+        <div>
+            <button type="button" id="subscribeButton"><span></span>SUBSCRIBE</button>
+            <button type="button" id="learnMoreButton"><span></span>LEARN MORE</button>
+               </div>
+    </div>
+
+    <!-- Java Script For the buttons -->
+    <script>   
+        document.addEventListener("DOMContentLoaded", function() {
+            const subscribeButton = document.querySelector("#subscribeButton");
+            const learnMoreButton = document.querySelector("#learnMoreButton");
+            
+            subscribeButton.addEventListener("click", function() {
+                window.location.href = "file:///C:/Users/erwin/OneDrive/Documents/FINAL%20PROJECT%20CODE/Signup%20page/signup.html";
+            });
+            
+            learnMoreButton.addEventListener("click", function() {
+                window.location.href = "file:///C:/Users/erwin/OneDrive/Documents/FINAL%20PROJECT%20CODE/coffee%20page%20code/coffeepage.html";
+            });
+        });
+    </script>
+
+ 
+
+</body>
+</html>
+

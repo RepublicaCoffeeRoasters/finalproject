@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Republica Coffee Rosters - Subscribe Here!</title>
+  <style>
+   
+    body {
+      background-image: url('./coffee.jpg');
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      border: 10px solid black;
+      font-family: "Copperplate Gothic Bold", sans-serif;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 450px;
+      margin: 0 auto;
+      padding: 40px;
+      background-color: white;
+      opacity: 0.9;
+      position: relative;
+      text-align: center;
+      height: 420px
+    }
+
+    .form-group {
+      margin-bottom:0%
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    .form-group input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    .form-group button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #000000;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .message {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 40px;
+    }
+
+    .visit-button {
+      position: absolute;
+      bottom: 0%;
+      transform: translateX(-50%);
+      margin-bottom: -30px;
+      width: 80%;
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #000000;
+      color: white;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .bottom-pictures {
+      position:absolute;
+      bottom: 35px;
+           width: 17%;
+      right: 41%;
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+    }
+
+    .bottom-pictures img {
+      width: 20px;
+      height: 0px;
+      
+    }
+
+    .hidden {
+      display: none;
+    }
+
+  
+@media (max-width: 600px) {
+  
+
+  .container {
+    max-width: 90%; 
+    padding: 20px; 
+  }
+
+  .form-group label {
+    font-size: 14px; 
+  }
+
+  .form-group input[type="email"] {
+    font-size: 14px; 
+  }
+
+  .form-group button {
+    font-size: 14px; 
+    padding: 8px 15px; 
+  }
+
+  .visit-button {
+    font-size: 14px; 
+    padding: 10px 20px; 
+  }
+
+  .bottom-pictures {
+    right: 50%; 
+    bottom: 10px; 
+  }
+
+  .bottom-pictures {
+    width: 16px; 
+  }
+}
+  </style>
+
+
+</head>
+<body>
+  <div class="background-image"></div>
+  <div class="container">
+    <h1>Join the Republica Family Subscribe Here!</h1>
+    <form action="https://formspree.io/f/xzblzloa" method="POST" id="subscribeForm">
+      
+      <input type="hidden" name="_to" value="erwinrpr12@gmail.com">
+    
+      <div class="form-group"> 
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <div class="form-group">
+        <button type="submit">Subscribe</button>
+      </div>
+    </form>
+    <div class="message" id="thanksMessage" style="display: none;">Thanks for subscribing! Use code "REP15" at checkout</div>
+    <div class="message" id="errorMessage" style="display: none; color: red;"></div>
+    <img src="Logo.png" alt="Additional Picture" class="bottom-pictures hidden">
+    <a href="https://www.republicaroasters.com" target="_blank" class="visit-button">Visit Our Website WWW.REPUBLICAROASTERS.COM</a>
+  </div>
+
+  <script>
+const form = document.getElementById('subscribeForm');
+const thanksMessage = document.getElementById('thanksMessage');
+const errorMessage = document.getElementById('errorMessage');
+const additionalPicture = document.querySelector('.bottom-pictures');
+
+
+// this is for correct email format
+
+form.addEventListener('submit', async function(event) {
+  event.preventDefault(); 
+
+  
+  const emailInput = document.getElementById('email');
+  const email = emailInput.value.trim();
+
+ 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    showError("Invalid email address format");
+    return;
+  }
+
+ 
+  const roleAccountDomains = ["info", "admin", "support", "noreply"];
+  const domain = email.split("@")[1];
+  if (roleAccountDomains.includes(domain.toLowerCase())) {
+    showError("Please provide a personal email address");
+    return;
+  }
+
+ 
+  thanksMessage.style.display = 'block';
+
+ 
+  additionalPicture.classList.remove('hidden');
+
+  
+  const subscribeButton = form.querySelector('button[type="submit"]');
+  subscribeButton.disabled = true;
+
+  // so that it waits 3 seconds before submitting the form to Formspree
+  await new Promise(resolve => setTimeout(resolve, 3000));
+
+  // Formspree
+  form.submit();
+});
+
+
+const subscribeButton = form.querySelector('button[type="submit"]');
+subscribeButton.addEventListener('click', async function(event) {
+  event.preventDefault(); 
+
+  
+  form.dispatchEvent(new Event('submit'));
+});
+  </script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Types</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+        }
+
+        .navbar {
+        width: 100%;
+        height:30px ;
+        display: flex;
+        align-items: center;
+        padding: 35px 0;
+        align-items: center;
+        background:rgba(0, 0, 0, 0.6);
+
+       }
+
+       .logo {
+        padding: 10px;
+        width: 180px; 
+        margin-right: 190px; 
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+
+       }
+
+       .Cart {
+        padding: 0px;
+        width: 10%;
+        height: auto;           
+        margin-left: 300px; 
+        cursor: pointer;
+        position: relative;
+        z-index: 2;
+
+       }
+
+       .navbar ul {
+        list-style: none;
+        display: flex;
+        text-align: center;
+        
+       }
+
+       .navbar ul li {
+        list-style: none;
+        margin: 0 40px;
+        position: relative;
+        text-align: center;
+        
+       }
+
+       .navbar ul li a {
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+
+       }
+
+       .navbar ul li ::after {
+        content: "";
+        height: 3px;
+        width: 0;
+        background: white;
+        position: absolute;
+        left: 0;
+        bottom: -10px;
+        transition: 0.2s;
+
+       }
+
+       .navbar ul li :hover::after {
+        width: 100%;
+
+
+       }
+
+        .coffee-type {
+            text-align: center;
+            padding: 2rem;
+            border: 1px solid white;
+            border-radius: 10px;
+            background-color: black;
+            box-shadow: 0px 30px 5px rgba(0, 0, 0, 0.9);
+            margin-bottom: 2rem; 
+        }
+
+        .coffee-image {
+            width: 80%; 
+            height: 30%;
+        }
+
+        header {
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            width: 100%;
+            background-image: url("alltypes.png"); 
+            background-size: cover;
+            background-position: center;
+            
+            
+        }
+
+        header h1 {
+            font-size: 70px;
+            color: black;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <img src="logo.webp" class="logo">
+        <ul>
+            <li><a href="file:///C:/Users/erwin/OneDrive/Documents/FINAL%20PROJECT%20CODE/A)%20WEBSITE%20CODE/Index.html">Home</a></li>
+            <li><a href="#">Coffee</a></li>
+            <li><a href="file:///C:/Users/erwin/OneDrive/Documents/FINAL%20PROJECT%20CODE/Signup%20page/signup.html">Sign Up</a></li>
+        </ul>
+        <a href="https://www.republicaroasters.com/product-category/online-shop/"><img src="Shopping Cart.png" class="Cart"></a>
+    </div>
+    <header>
+        <h1>EXPLORE OUR COFFEE</h1>
+    </header>
+    <div class="coffee-type">
+        <img src="lightcoffee.png" alt="Coffee Type 1" class="coffee-image">
+        <h2>Light</h2>
+        <p>Light coffee is characterized by its pale color and delicate flavors. The beans are roasted for a shorter period of time allowing their natural characteristics to shine through. Light coffees often have a higher acidity and a milder body. They might exhibit vibrant and nuanced flavors, including fruity, floral, and even tea-like notes. The caffeine content is usually higher in light roasts due to the shorter roasting process. Overall, light coffee provides a more subtle and complex tasting experience.</p>
+    </div>
+    <div class="coffee-type">
+        <img src="mediumcoffee.png" alt="Coffee Type 2" class="coffee-image">
+        <h2>Medium</h2>
+        <p>Medium coffee falls in between light and dark roasts in terms of both flavor and appearance. The beans are roasted for a moderate duration, striking a balance between preserving the bean's original characteristics and developing some roasted notes. Medium coffees have a slightly richer body and a more balanced acidity. Flavors can range from slightly fruity and nutty to hints of chocolate and caramel. This roast level tends to be a popular choice for those who enjoy a well-rounded cup with a mix of both the bean's inherent flavors and the roasting process's influence.</p>
+    </div>
+    <div class="coffee-type">
+        <img src="darkcoffee.png" alt="Coffee Type 3" class="coffee-image">
+        <h2>Dark</h2>
+        <p>Dark coffee beans are roasted for a longer period, resulting in a deep brown to almost black color. The longer roasting time brings out more roasted and caramelized flavors, often with bittersweet or even smoky undertones. The acidity in dark roasts is significantly reduced, and the body is fuller and sometimes even oily. The original characteristics of the coffee bean are often overshadowed by the intense roasting flavors. Dark coffees are favored by those who enjoy a bold and robust taste with less emphasis on the bean's origin flavors.</p>
+    </div>
+</body>
+</html>
+
